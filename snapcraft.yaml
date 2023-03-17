@@ -30,4 +30,11 @@ parts:
     source: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
     source-depth: 1
     plugin: make
+    build-packages:
+     - gtk-update-icon-cache
+     
+    override-prime: |
+        craftctl default
+        update-icon-caches /usr/share/icons/*
+        
    
