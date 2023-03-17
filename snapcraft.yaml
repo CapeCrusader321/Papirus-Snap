@@ -19,7 +19,7 @@ slots:
     interface: content
     source:
       read:
-        - $SNAP/share/icons/Papirus-Dark
+        - $SNAP/usr/share/icons/Papirus-Dark
 
 parts:      
   papirus:
@@ -28,9 +28,9 @@ parts:
     plugin: make
     override-build: |
       craftctl default
-      mkdir -p $CRAFT_PART_INSTALL/share/icons
-      mv $CRAFT_PART_INSTALL/usr/share/icons/Papirus-Dark $CRAFT_PART_INSTALL/share/icons/
-      $CRAFT_PART_INSTALL/share/icons
+      $CRAFT_PART_INSTALL/usr/share/icons
+   #mv $CRAFT_PART_INSTALL/usr/share/icons/Papirus-Dark $CRAFT_PART_INSTALL/share/icons/
+      
     
     stage:
-      - share/icons/Papirus-*
+      - usr/share/icons/Papirus-Dark
