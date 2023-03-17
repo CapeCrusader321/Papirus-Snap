@@ -29,7 +29,7 @@ parts:
     override-build: |
       craftctl default
       mkdir -p $CRAFT_PART_INSTALL/share/icons
-      mv $CRAFT_PART_INSTALL/usr/share/icons/* $CRAFT_PART_INSTALL/share/icons/
+      mv $CRAFT_PART_INSTALL/usr/local/share/icons/* $CRAFT_PART_INSTALL/share/icons/
       $CRAFT_PART_INSTALL/share/icons
     
     stage:
