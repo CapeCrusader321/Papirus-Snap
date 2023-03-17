@@ -1,6 +1,6 @@
 name: papirus
 version: 'Latest'
-build-base: core20
+build-base: core22
 base: bare
 architectures:
   - all
@@ -37,7 +37,7 @@ parts:
     make-parameters:
       - --prefix=/
     override-build: |
-      snapcraftctl build
-      $SNAPCRAFT_STAGE/update-icon-cache.sh $SNAPCRAFT_PART_INSTALL/share/icons
-    stage:
-      - share/icons
+      craftctl default
+      $CRAFT_STAGE/update-icon-cache.sh $CRAFT_PART_INSTALL/share/icons
+      stage:
+        - share/icons
