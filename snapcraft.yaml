@@ -21,18 +21,8 @@ slots:
       read:
         - $SNAP/share/icons/Papirus-Dark
 
-parts:
-  utils:
-    plugin: dump
-    source: utils
-    prime:
-      - -*
-    build-packages:
-      - gtk-update-icon-cache
-      - libgtk-3-bin
-        
+parts:      
   papirus:
-    after: [ utils ]
     source: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
     source-depth: 1
     plugin: make
