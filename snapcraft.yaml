@@ -25,9 +25,12 @@ parts:
   papirus:
     source: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
     source-depth: 1
-    plugin: make
+    plugin: cmake
     override-build: |
       craftctl default
-      $CRAFT_STAGE/update-icon-cache.sh $CRAFT_PART_INSTALL/share/icons
-      stage:
-        - share/icons
+      mkdir -p $CRAFT_PART_INSTALL/share/icons
+      mv $CRAFT_PART_INSTALL/usr/share/icons/* $CRAFT_PART_INSTALL/share/icons/
+      $CRAFT_PART_INSTALL/share/icons
+    
+    stage:
+      - share/icons/Papirus-*
