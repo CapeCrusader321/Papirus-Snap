@@ -1,0 +1,43 @@
+name: papirus
+version: 'Latest'
+build-base: core20
+base: bare
+architectures:
+  - all
+summary: Latest Complete Set of Papirus-Icons
+description: |
+  This snap provides the Papirus Icon Theme in a form that can be used
+  by other snapped applications. It can be installed alongside the
+  gtk-common-themes snap.
+grade: stable
+confinement: strict
+
+slots:
+  icon-themes:
+    interface: content
+    source:
+      read:
+        - $SNAP/share/icons/Papirus-Dark
+
+parts:
+  utils:
+    plugin: dump
+    source: utils
+    prime:
+      - -*
+    build-packages:
+      - try: [gtk-update-icon-cache]
+      - else: [libgtk-3-bin]
+        
+  papirus:
+    after: [ utils ]
+    source: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
+    source-depth: 1
+    plugin: make
+    make-parameters:
+      - --prefix=/
+    override-build: |
+      snapcraftctl build
+      $SNAPCRAFT_STAGE/update-icon-cache.sh $SNAPCRAFT_PART_INSTALL/share/icons
+    stage:
+      - share/icons
