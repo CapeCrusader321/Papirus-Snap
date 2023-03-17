@@ -28,8 +28,8 @@ parts:
     prime:
       - -*
     build-packages:
-      - try: [gtk-update-icon-cache]
-      - else: [libgtk-3-bin]
+      - gtk-update-icon-cache
+      - libgtk-3-bin
         
   papirus:
     after: [ utils ]
