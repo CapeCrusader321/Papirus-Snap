@@ -26,11 +26,11 @@ parts:
     source: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
     source-depth: 1
     plugin: make
-    override-build: |
-      craftctl default
-      $CRAFT_PART_INSTALL/usr/share/icons
+   #override-build: |
+   #craftctl default
+   #$CRAFT_PART_INSTALL/usr/share/icons
    #mv $CRAFT_PART_INSTALL/usr/share/icons/Papirus-Dark $CRAFT_PART_INSTALL/share/icons/
       
     
-    stage:
-      - usr/share/icons/Papirus-Dark
+  #stage:
+      #- usr/share/icons/Papirus-Dark
