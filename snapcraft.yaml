@@ -25,7 +25,7 @@ parts:
   papirus:
     source: https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git
     source-depth: 1
-    plugin: cmake
+    plugin: make
     override-build: |
       craftctl default
       mkdir -p $CRAFT_PART_INSTALL/share/icons
