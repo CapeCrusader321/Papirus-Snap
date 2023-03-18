@@ -32,6 +32,7 @@ parts:
     plugin: make
     build-packages:
      - gtk-update-icon-cache
+     - curl
      
     override-pull: |
         craftctl default
