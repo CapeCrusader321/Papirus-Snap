@@ -38,11 +38,7 @@ parts:
         craftctl set version=$(git describe --tags) 
         VER=$(git describe --tags)
         curl -LO https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/refs/tags/${VER}.tar.gz
-        
-   #VER="$(git ls-remote --tags https://github.com/PapirusDevelopmentTeam/papirus-icon-theme.git | \
-   #sed 's;^.*/v;;' | sort -t. -k 1,1n -k 2,2n -k 3,3n | tail -1)"
-   #curl -LO https://github.com/PapirusDevelopmentTeam/papirus-icon-theme/archive/refs/tags/${VER}.tar.gz
-    
+  
     override-prime: |
         craftctl default
         update-icon-caches /usr/share/icons/*
