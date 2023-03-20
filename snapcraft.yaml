@@ -1,6 +1,7 @@
 name: papirus
 adopt-info: papirus
-base: core22
+base: bare
+build-base: core22
 summary: Latest Complete Set of Papirus-Icons
 description: |
   This snap provides the Papirus Icon Theme in a form that can be used
@@ -11,7 +12,7 @@ compression: lzo
 confinement: strict
 architectures:
   - build-on: amd64
-    build-for: amd64
+    build-for: all
 
 
 slots:
